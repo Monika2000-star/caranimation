@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>panda animation</title>
+    <style>
+        body{
+            background-color: orange;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            
+        }
+        .container {
+            width: 100%;
+            position: relative;
+            height: 150px; /* Adjust based on the panda's height */
+            position: absolute;
+            top: 50%; /* Move to the vertical center */
+            left: 50%; /* Move to the horizontal center */
+            transform: translate(-50%, -50%); /* Center the container */
+            
+        }
+        .road
+        {
+            border: 7px dashed black;
+            margin: 0 0;
+            border-left: 0;
+            border-right: 0;
+            position: relative;
+        
+        }
+        .pan
+        {
+            background: url(panda.png);
+            width: 155px;
+            height: 130px;
+            animation: walk 1s steps(9) infinite, 
+            forward 5s linear infinite;
+
+        }
+
+         @keyframes walk {
+            0% {
+        background-position: 0px;
+    }
+       100% {
+        background-position:1400px;
+    }
+   }
+    @keyframes forward {
+    0%{
+        transform: translateX(-100px);
+    }
+       100%{
+           transform: translateX(1200px)
+       } 
+    }
+    </style>
+</head>
+<body>
+    <div> <div class="container">
+        <div class="pan"></div>
+        <div class="road"></div>
+    </div>
+    </div>
+</body>
+</html>
